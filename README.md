@@ -4,7 +4,9 @@ Fork personal de [ezxzeng/zmk-bgkeeb](https://github.com/ezxzeng/zmk-bgkeeb) par
 
 ## Estado
 
-Primera build en curso via GitHub Actions. Los artefactos `bgkeeb_left-nice_nano_v2-zmk.uf2` y `bgkeeb_right-nice_nano_v2-zmk.uf2` se descargan desde la pestaña Actions.
+Primera build en curso via GitHub Actions. Los artefactos `bgkeeb_left-nice_nano-zmk.uf2` y `bgkeeb_right-nice_nano-zmk.uf2` se descargan desde la pestaña Actions.
+
+> Nota: el repo upstream `ezxzeng/zmk-bgkeeb` usaba `board: nice_nano_v2` que ya no existe en ZMK actual. Cambiado a `nice_nano` en `build.yaml`.
 
 ## Uso
 
