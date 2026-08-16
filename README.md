@@ -6,7 +6,12 @@ Fork personal de [ezxzeng/zmk-bgkeeb](https://github.com/ezxzeng/zmk-bgkeeb) par
 
 Primera build en curso via GitHub Actions. Los artefactos `bgkeeb_left-nice_nano-zmk.uf2` y `bgkeeb_right-nice_nano-zmk.uf2` se descargan desde la pestaña Actions.
 
-> Nota: el repo upstream `ezxzeng/zmk-bgkeeb` usaba `board: nice_nano_v2` que ya no existe en ZMK actual. Cambiado a `nice_nano` en `build.yaml`.
+> Nota: el repo upstream `ezxzeng/zmk-bgkeeb` (nov-2023) está desactualizado para ZMK actual. Cambios necesarios en `build.yaml`:
+>
+> - `board: nice_nano_v2` → eliminado en Zephyr 4.1, ahora es `nice_nano` con qualifier
+> - añadido qualifier `//zmk` (variante ZMK obligatoria desde ZMK sobre Zephyr 4.1, dic-2025)
+>
+> Referencia: https://zmk.dev/blog/2025/12/09/zephyr-4-1#zmk-board-variant
 
 ## Uso
 
