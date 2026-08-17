@@ -27,11 +27,16 @@
         diode-direction = "row2col";
         // #define MATRIX_ROW_PINS { F6, D7, B3, E6 }     == { 19, 6, 14, 7 }
         // #define MATRIX_COL_PINS { F4, D4, F5, B1, B2 } == { 21, 4, 20, 15, 16 }
+        // INVERTED 180°: nice!nano v2 mounted reversed.
+        // Each pro_micro index N now lands on PCB pad (25-N).
+        // Original mapping: row0=pad18→D19→19, row1=pad9→D6→6, row2=pad15→D14→14, row3=pad10→D7→7
+        // Inverted mapping: row0=pad18←module_pad7→D4→4, row1=pad9←module_pad16→D15→15,
+        //                   row2=pad15←module_pad10→D7→7, row3=pad10←module_pad15→D14→14
         row-gpios
-            = <&pro_micro 19 GPIO_ACTIVE_HIGH>
-            , <&pro_micro 6  GPIO_ACTIVE_HIGH>
-            , <&pro_micro 14 GPIO_ACTIVE_HIGH>
+            = <&pro_micro 4  GPIO_ACTIVE_HIGH>
+            , <&pro_micro 15 GPIO_ACTIVE_HIGH>
             , <&pro_micro 7  GPIO_ACTIVE_HIGH>
+            , <&pro_micro 14 GPIO_ACTIVE_HIGH>
             ;
     };
 
