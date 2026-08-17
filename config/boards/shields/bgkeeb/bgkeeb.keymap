@@ -1,25 +1,14 @@
 / {
-    behaviors {
-        test_print: test_print {
-            compatible = "zmk,behavior-dummy";
-            #binding-cells = <0>;
+    keymap {
+        compatible = "zmk,keymap";
+
+        test_layer {
+            bindings = <
+                &kp N1      &kp N2      &kp N3      &kp N4      &kp N5
+                &kp A       &kp S       &kp D       &kp F       &kp G
+                &kp Z       &kp X       &kp C       &kp V       &kp B
+                &trans      &trans      &kp N6      &kp N7      &kp N8
+            >;
         };
-    };
-};
-
-keymap {
-    compatible = "zmk,keymap";
-
-    test_layer {
-        bindings = <
-            // Row 0: 1 2 3 4 5
-            &kp N1      &kp N2      &kp N3      &kp N4      &kp N5
-            // Row 1: a s d f g
-            &kp A       &kp S       &kp D       &kp F       &kp G
-            // Row 2: z x c v b
-            &kp Z       &kp X       &kp C       &kp V       &kp B
-            // Row 3: _ _ 6 7 8
-            &trans      &trans      &kp N6      &kp N7      &kp N8
-        >;
     };
 };
