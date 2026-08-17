@@ -1,5 +1,5 @@
-// Firmware de diagnóstico para identificar filas/columnas del bgkeeb v2
-// Capa única. Cada posición física escribe un carácter único para mapear.
+// Test mínimo: una sola tecla lógica en la posición RC(0,0) para descartar
+// que el problema sea el keymap complejo.
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -9,12 +9,12 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            label = "Diag";
+            label = "Single";
             bindings = <
-    &kp N1      &kp N2      &kp N3      &kp N4      &kp N5          &kp N6      &kp N7      &kp N8      &kp N9      &kp N0
-    &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y       &kp U       &kp I       &kp O       &kp P
-    &kp A       &kp S       &kp D       &kp F       &kp G           &kp H       &kp J       &kp K       &kp L       &kp SEMI
-                  &kp Z      &kp X       &kp C      &kp V           &kp B      &kp N       &kp M       &kp COMMA
+    &kp Q       &trans      &trans      &trans      &trans          &trans      &trans      &trans      &trans      &trans
+    &trans      &trans      &trans      &trans      &trans          &trans      &trans      &trans      &trans      &trans
+    &trans      &trans      &trans      &trans      &trans          &trans      &trans      &trans      &trans      &trans
+                  &trans      &trans      &trans      &trans          &trans      &trans      &trans      &trans
             >;
         };
     };
