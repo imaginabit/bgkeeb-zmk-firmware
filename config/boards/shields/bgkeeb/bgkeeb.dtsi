@@ -24,7 +24,7 @@
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
 
-        diode-direction = "row2col";
+        diode-direction = "col2row";
         // #define MATRIX_ROW_PINS { F6, D7, B3, E6 }     == { 19, 6, 14, 7 }
         // #define MATRIX_COL_PINS { F4, D4, F5, B1, B2 } == { 21, 4, 20, 15, 16 }
         row-gpios
