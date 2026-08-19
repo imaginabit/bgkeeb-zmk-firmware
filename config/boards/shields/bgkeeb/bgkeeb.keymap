@@ -15,7 +15,7 @@
                           &none     &kp ENTER &kp SPACE &mo 1
             >;
             // Encoder: volumen up/down en base
-            sensor-bindings = <&inc_dec &kp C_VOL_UP &kp C_VOL_DN>;
+            sensor-bindings = <&kp C_VOL_UP &kp C_VOL_DN>;
         };
 
         // Layer 1: Números y símbolos (mantener thumb derecho)
