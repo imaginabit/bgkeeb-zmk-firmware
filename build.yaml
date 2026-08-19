@@ -13,8 +13,10 @@
 #
 ---
 include:
-  - board: nice_nano//zmk_studio
+  - board: nice_nano//zmk
     shield: bgkeeb_left
-  - board: nice_nano//zmk_studio
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  - board: nice_nano//zmk
     shield: bgkeeb_right
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
 
