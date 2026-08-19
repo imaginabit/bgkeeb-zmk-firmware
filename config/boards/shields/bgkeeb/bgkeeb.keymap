@@ -14,8 +14,6 @@
                 &kp Z     &kp X     &kp C     &kp V     &kp B
                           &none     &kp ENTER &kp SPACE &mo 1
             >;
-            // Encoder: scroll up/down (PgUp/PgDn work as sensor-bindings)
-            sensor-bindings = <&kp PG_UP &kp PG_DN>;
         };
 
         // Layer 1: Números y símbolos (mantener thumb derecho)
