@@ -5,13 +5,27 @@
     keymap {
         compatible = "zmk,keymap";
 
-        test_layer {
-            label = "Test";
+        // Layer 0: QWERTY base
+        base {
+            label = "Base";
             bindings = <
-    &kp N1      &kp N2      &kp N3      &kp N4      &kp N5
-    &kp A       &kp S       &kp D       &kp F       &kp G
-    &kp Z       &kp X       &kp C       &kp V       &kp B
-              &trans      &trans      &kp N6      &kp N7      &kp N8
+                &kp Q     &kp W     &kp E     &kp R     &kp T
+                &kp A     &kp S     &kp D     &kp F     &kp G
+                &kp Z     &kp X     &kp C     &kp V     &kp B
+                          &none     &kp ENTER &kp SPACE &mo 1
+            >;
+            // Encoder: volumen up/down en base
+            sensor-bindings = <&inc_dec &kp C_VOL_UP &kp C_VOL_DN>;
+        };
+
+        // Layer 1: Números y símbolos (mantener thumb derecho)
+        num {
+            label = "Num";
+            bindings = <
+                &kp N1    &kp N2    &kp N3    &kp N4    &kp N5
+                &kp N6    &kp N7    &kp N8    &kp N9    &kp N0
+                &kp MINUS &kp EQUAL &kp BSLH  &kp GRAVE &kp LBKT
+                          &none     &kp ENTER &kp SPACE &kp LSHFT
             >;
         };
     };
