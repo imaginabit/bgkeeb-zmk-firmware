@@ -1,5 +1,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/studio_unlock.dtsi>
 
 / {
     keymap {
@@ -25,6 +26,17 @@
                 &kp MINUS &kp EQUAL &kp BSLH  &kp GRAVE &kp LBKT
                           &none     &kp ENTER &kp SPACE &kp LSHFT
             >;
+        };
+
+        // Combo: mantener Q+W un momento (&studio_unlock) para desbloquear ZMK Studio.
+        // Posiciones de key-positions son (row, col) en el kscan. 0,0 = Q. 0,1 = W.
+        combos {
+            compatible = "zmk,combos";
+            combo_studio_unlock {
+                timeout-ms = <50>;
+                bindings = <&studio_unlock>;
+                key-positions = <0 0>, <0 1>;
+            };
         };
     };
 };
