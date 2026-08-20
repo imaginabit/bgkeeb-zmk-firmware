@@ -5,6 +5,9 @@
     keymap {
         compatible = "zmk,keymap";
 
+        // Layer 0: QWERTY base.
+        // Tecla G (fila 1, col 4): &studio_unlock para desbloquear ZMK Studio.
+        // Combo Q+W (key-positions = <0 0 0 1>): flat array de 4 ints = 2 pares row,col.
         base {
             label = "Base";
             bindings = <
@@ -15,6 +18,7 @@
             >;
         };
 
+        // Layer 1: Números y símbolos (mantener thumb derecho)
         num {
             label = "Num";
             bindings = <
@@ -25,12 +29,14 @@
             >;
         };
 
+        // Combo Q+W: mantener ambas un instante → &studio_unlock.
+        // Key-positions formato: array plano de 4 ints (2 pares row,col): <0 0 0 1>
         combos {
             compatible = "zmk,combos";
-            combo_0 {
+            combo_unlock {
                 timeout-ms = <50>;
-                bindings = <&kp X>;
-                key-positions = <0 0>, <0 1>;
+                bindings = <&studio_unlock>;
+                key-positions = <0 0 0 1>;
             };
         };
     };
