@@ -6,8 +6,8 @@
         compatible = "zmk,keymap";
 
         // Layer 0: QWERTY base.
-        // La tecla G (fila 1, col 4) está binded a &studio_unlock para desbloquear ZMK Studio.
-        // Una vez desbloqueado, reasignar desde la UI si quieres esta tecla libre.
+        // Tecla G (fila 1, col 4): &studio_unlock para desbloquear ZMK Studio desde tecla.
+        // Combo Q+W: tap corto mantiene las teclas, tap largo (50ms+) dispara &studio_unlock.
         base {
             label = "Base";
             bindings = <
@@ -27,6 +27,17 @@
                 &kp MINUS &kp EQUAL &kp BSLH  &kp GRAVE &kp LBKT
                           &none     &kp ENTER &kp SPACE &kp LSHFT
             >;
+        };
+
+        // Combo Q+W: mantener ambas un instante (50ms) → &studio_unlock.
+        // Key-positions son (row, col) en el kscan. 0,0=Q, 0,1=W.
+        combos {
+            compatible = "zmk,combos";
+            combo_unlock {
+                timeout-ms = <50>;
+                bindings = <&studio_unlock>;
+                key-positions = <0 0>, <0 1>;
+            };
         };
     };
 };
