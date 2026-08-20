@@ -5,12 +5,14 @@
     keymap {
         compatible = "zmk,keymap";
 
-        // Layer 0: QWERTY base
+        // Layer 0: QWERTY base.
+        // La tecla G (fila 1, col 4) está binded a &studio_unlock para desbloquear ZMK Studio.
+        // Una vez desbloqueado, reasignar desde la UI si quieres esta tecla libre.
         base {
             label = "Base";
             bindings = <
                 &kp Q     &kp W     &kp E     &kp R     &kp T
-                &kp A     &kp S     &kp D     &kp F     &kp G
+                &kp A     &kp S     &kp D     &kp F     &studio_unlock
                 &kp Z     &kp X     &kp C     &kp V     &kp B
                           &none     &kp ENTER &kp SPACE &mo 1
             >;
@@ -25,17 +27,6 @@
                 &kp MINUS &kp EQUAL &kp BSLH  &kp GRAVE &kp LBKT
                           &none     &kp ENTER &kp SPACE &kp LSHFT
             >;
-        };
-
-        // Combo: mantener Q+W un momento (&studio_unlock) para desbloquear ZMK Studio.
-        // Posiciones de key-positions son (row, col) en el kscan. 0,0 = Q. 0,1 = W.
-        combos {
-            compatible = "zmk,combos";
-            combo_studio_unlock {
-                timeout-ms = <50>;
-                bindings = <&studio_unlock>;
-                key-positions = <0 0>, <0 1>;
-            };
         };
     };
 };
