@@ -13,27 +13,28 @@
         display-name = "bgkeeb default";
         transform = <&default_transform>;
         kscan = <&kscan0>;
-        keys  // width height x    y    r   rx  ry
-            = <&key_physical_attrs 1 1 0 0 0 0 0>  /* RC(0,0) */
-            , <&key_physical_attrs 1 1 1 0 0 0 0>  /* RC(0,1) */
-            , <&key_physical_attrs 1 1 2 0 0 0 0>  /* RC(0,2) */
-            , <&key_physical_attrs 1 1 3 0 0 0 0>  /* RC(0,3) */
-            , <&key_physical_attrs 1 1 4 0 0 0 0>  /* RC(0,4) */
-            , <&key_physical_attrs 1 1 0 1 0 0 0>  /* RC(1,0) */
-            , <&key_physical_attrs 1 1 1 1 0 0 0>  /* RC(1,1) */
-            , <&key_physical_attrs 1 1 2 1 0 0 0>  /* RC(1,2) */
-            , <&key_physical_attrs 1 1 3 1 0 0 0>  /* RC(1,3) */
-            , <&key_physical_attrs 1 1 4 1 0 0 0>  /* RC(1,4) */
-            , <&key_physical_attrs 1 1 0 2 0 0 0>  /* RC(2,0) */
-            , <&key_physical_attrs 1 1 1 2 0 0 0>  /* RC(2,1) */
-            , <&key_physical_attrs 1 1 2 2 0 0 0>  /* RC(2,2) */
-            , <&key_physical_attrs 1 1 3 2 0 0 0>  /* RC(2,3) */
-            , <&key_physical_attrs 1 1 4 2 0 0 0>  /* RC(2,4) */
-            , <&key_physical_attrs 1 1 0 3 0 0 0>  /* RC(3,0) - no physical key */
-            , <&key_physical_attrs 1 1 1 3 0 0 0>  /* RC(3,1) - no physical key */
-            , <&key_physical_attrs 1 1 2 3 0 0 0>  /* RC(3,2) thumb */
-            , <&key_physical_attrs 1 1 3 3 0 0 0>  /* RC(3,3) thumb */
-            , <&key_physical_attrs 1 1 4 3 0 0 0>  /* RC(3,4) thumb */
+        // Units in hundredths-of-u (1u = 100). Layout: 5 cols × 4 rows + thumb row offset.
+        keys  // width   height   x      y      r rx ry
+            = <&key_physical_attrs 100 100    0     0    0  0  0>  /* RC(0,0) */
+            , <&key_physical_attrs 100 100  100     0    0  0  0>  /* RC(0,1) */
+            , <&key_physical_attrs 100 100  200     0    0  0  0>  /* RC(0,2) */
+            , <&key_physical_attrs 100 100  300     0    0  0  0>  /* RC(0,3) */
+            , <&key_physical_attrs 100 100  400     0    0  0  0>  /* RC(0,4) */
+            , <&key_physical_attrs 100 100    0   100    0  0  0>  /* RC(1,0) */
+            , <&key_physical_attrs 100 100  100   100    0  0  0>  /* RC(1,1) */
+            , <&key_physical_attrs 100 100  200   100    0  0  0>  /* RC(1,2) */
+            , <&key_physical_attrs 100 100  300   100    0  0  0>  /* RC(1,3) */
+            , <&key_physical_attrs 100 100  400   100    0  0  0>  /* RC(1,4) */
+            , <&key_physical_attrs 100 100    0   200    0  0  0>  /* RC(2,0) */
+            , <&key_physical_attrs 100 100  100   200    0  0  0>  /* RC(2,1) */
+            , <&key_physical_attrs 100 100  200   200    0  0  0>  /* RC(2,2) */
+            , <&key_physical_attrs 100 100  300   200    0  0  0>  /* RC(2,3) */
+            , <&key_physical_attrs 100 100  400   200    0  0  0>  /* RC(2,4) */
+            , <&key_physical_attrs 100 100    0   300    0  0  0>  /* RC(3,0) - no physical switch */
+            , <&key_physical_attrs 100 100  100   300    0  0  0>  /* RC(3,1) - no physical switch */
+            , <&key_physical_attrs 100 100  200   350    0  0  0>  /* RC(3,2) thumb (slight offset down) */
+            , <&key_physical_attrs 100 100  300   350    0  0  0>  /* RC(3,3) thumb */
+            , <&key_physical_attrs 100 100  400   350    0  0  0>  /* RC(3,4) thumb */
             ;
     };
 
