@@ -12,29 +12,34 @@
         display-name = "bgkeeb default";
         transform = <&default_transform>;
         kscan = <&kscan0>;
-        keys  // width height x    y    r   rx  ry
-            = <0 1 1 0 0 0 0>  /* RC(0,0) */
-            , <0 1 1 0 1 0 0>  /* RC(0,1) */
-            , <0 1 1 0 2 0 0>  /* RC(0,2) */
-            , <0 1 1 0 3 0 0>  /* RC(0,3) */
-            , <0 1 1 0 4 0 0>  /* RC(0,4) */
-            , <1 1 0 1 0 0 0>  /* RC(1,0) */
-            , <1 1 0 1 1 0 0>  /* RC(1,1) */
-            , <1 1 0 1 2 0 0>  /* RC(1,2) */
-            , <1 1 0 1 3 0 0>  /* RC(1,3) */
-            , <1 1 0 1 4 0 0>  /* RC(1,4) */
-            , <2 1 0 2 0 0 0>  /* RC(2,0) */
-            , <2 1 0 2 1 0 0>  /* RC(2,1) */
-            , <2 1 0 2 2 0 0>  /* RC(2,2) */
-            , <2 1 0 2 3 0 0>  /* RC(2,3) */
-            , <2 1 0 2 4 0 0>  /* RC(2,4) */
-            , <3 1 0 3 0 0 0>  /* RC(3,0) - no physical key */
-            , <3 1 0 3 1 0 0>  /* RC(3,1) - no physical key */
-            , <3 1 0 3 2 0 0>  /* RC(3,2) thumb */
-            , <3 1 0 3 3 0 0>  /* RC(3,3) thumb */
-            , <3 1 0 3 4 0 0>  /* RC(3,4) thumb */
-            ;
+        keys = <&key_0_0>, <&key_0_1>, <&key_0_2>, <&key_0_3>, <&key_0_4>,
+               <&key_1_0>, <&key_1_1>, <&key_1_2>, <&key_1_3>, <&key_1_4>,
+               <&key_2_0>, <&key_2_1>, <&key_2_2>, <&key_2_3>, <&key_2_4>,
+               <&key_3_0>, <&key_3_1>, <&key_3_2>, <&key_3_3>, <&key_3_4>;
     };
+
+    // Key physical attributes (used by ZMK Studio to render the physical layout)
+    // Units are in "u" (1u = 19.05mm). Format: width, height, x, y, rotation, rx, ry
+    key_0_0: key_phys_0_0 { compatible = "zmk,key-physical-attrs"; width = <1>; height = <1>; x = <0>; y = <0>; };
+    key_0_1: key_phys_0_1 { compatible = "zmk,key-physical-attrs"; width = <1>; height = <1>; x = <1>; y = <0>; };
+    key_0_2: key_phys_0_2 { compatible = "zmk,key-physical-attrs"; width = <1>; height = <1>; x = <2>; y = <0>; };
+    key_0_3: key_phys_0_3 { compatible = "zmk,key-physical-attrs"; width = <1>; height = <1>; x = <3>; y = <0>; };
+    key_0_4: key_phys_0_4 { compatible = "zmk,key-physical-attrs"; width = <1>; height = <1>; x = <4>; y = <0>; };
+    key_1_0: key_phys_1_0 { compatible = "zmk,key-physical-attrs"; width = <1>; height = <1>; x = <0>; y = <1>; };
+    key_1_1: key_phys_1_1 { compatible = "zmk,key-physical-attrs"; width = <1>; height = <1>; x = <1>; y = <1>; };
+    key_1_2: key_phys_1_2 { compatible = "zmk,key-physical-attrs"; width = <1>; height = <1>; x = <2>; y = <1>; };
+    key_1_3: key_phys_1_3 { compatible = "zmk,key-physical-attrs"; width = <1>; height = <1>; x = <3>; y = <1>; };
+    key_1_4: key_phys_1_4 { compatible = "zmk,key-physical-attrs"; width = <1>; height = <1>; x = <4>; y = <1>; };
+    key_2_0: key_phys_2_0 { compatible = "zmk,key-physical-attrs"; width = <1>; height = <1>; x = <0>; y = <2>; };
+    key_2_1: key_phys_2_1 { compatible = "zmk,key-physical-attrs"; width = <1>; height = <1>; x = <1>; y = <2>; };
+    key_2_2: key_phys_2_2 { compatible = "zmk,key-physical-attrs"; width = <1>; height = <1>; x = <2>; y = <2>; };
+    key_2_3: key_phys_2_3 { compatible = "zmk,key-physical-attrs"; width = <1>; height = <1>; x = <3>; y = <2>; };
+    key_2_4: key_phys_2_4 { compatible = "zmk,key-physical-attrs"; width = <1>; height = <1>; x = <4>; y = <2>; };
+    key_3_0: key_phys_3_0 { compatible = "zmk,key-physical-attrs"; width = <1>; height = <1>; x = <0>; y = <3>; };
+    key_3_1: key_phys_3_1 { compatible = "zmk,key-physical-attrs"; width = <1>; height = <1>; x = <1>; y = <3>; };
+    key_3_2: key_phys_3_2 { compatible = "zmk,key-physical-attrs"; width = <1>; height = <1>; x = <2>; y = <3>; };
+    key_3_3: key_phys_3_3 { compatible = "zmk,key-physical-attrs"; width = <1>; height = <1>; x = <3>; y = <3>; };
+    key_3_4: key_phys_3_4 { compatible = "zmk,key-physical-attrs"; width = <1>; height = <1>; x = <4>; y = <3>; };
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
