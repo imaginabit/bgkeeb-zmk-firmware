@@ -10,8 +10,8 @@
     physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
         display-name = "bgkeeb default";
-        transform = &default_transform;
-        kscan = &kscan0;
+        transform = <&default_transform>;
+        kscan = <&kscan0>;
         keys  // width height x    y    r   rx  ry
             = <0 1 1 0 0 0 0>  /* RC(0,0) */
             , <0 1 1 0 1 0 0>  /* RC(0,1) */
