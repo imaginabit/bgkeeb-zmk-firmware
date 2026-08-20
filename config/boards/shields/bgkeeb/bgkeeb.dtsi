@@ -84,4 +84,11 @@
         sensors = <&encoder>;
         triggers-per-rotation = <20>;
     };
+
+    // Battery monitoring via nRF52840 internal VDDH voltage divider (no extra GPIO).
+    // Solo con este nodo + &adc status "okay" (ya hecho por nice_nano base)
+    // ZMK empieza a reportar battery % via Studio RPC.
+    battery {
+        compatible = "zmk,battery-nrf-vddh";
+    };
 };
